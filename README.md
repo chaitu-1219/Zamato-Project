@@ -1,138 +1,169 @@
-🍽️ Zomato Sentiment Analysis with Clustering
-📌 Project Overview
+# 🍽️ Zomato Sentiment Analysis & Review Clustering
 
-Online food delivery platforms such as Zomato receive thousands of customer reviews daily. These reviews contain valuable feedback regarding food quality, service, and overall customer experience. Manually analyzing such large volumes of textual data is inefficient and time-consuming.
+## 📌 Project Overview
 
-This project automates the process of sentiment analysis using Natural Language Processing (NLP) and Machine Learning, while also integrating Unsupervised Learning (Clustering) to discover hidden patterns in customer reviews.
+Online food delivery platforms like **Zomato** receive thousands of customer reviews daily. These reviews contain valuable insights about food quality, service experience, delivery performance, and overall customer satisfaction. However, manually analyzing large volumes of textual feedback is inefficient and time-consuming.
 
-The system classifies restaurant reviews into Positive and Negative sentiments and groups similar reviews using clustering techniques.
+This project builds an **end-to-end Machine Learning system** that automatically:
 
-🎯 Objectives
+* Cleans and preprocesses customer reviews
+* Classifies reviews into **Positive or Negative sentiment**
+* Applies **Clustering (K-Means)** to identify hidden review patterns
+* Visualizes insights for business decision-making
+* Provides a **deployment-ready sentiment prediction function**
 
-Perform Exploratory Data Analysis (EDA) on review data
+---
 
-Clean and preprocess textual data
+## 🎯 Problem Statement
 
-Convert text into numerical features using TF-IDF
+To build a machine learning system that automatically analyzes Zomato restaurant reviews and classifies them into positive or negative sentiments using NLP techniques, while also identifying hidden patterns through clustering to support data-driven business decisions.
 
-Build a sentiment classification model
+---
 
-Apply K-Means clustering to discover review patterns
+## 🛠️ Technologies Used
 
-Evaluate model and clustering performance
+* **Python**
+* **Pandas & NumPy**
+* **Matplotlib & Seaborn**
+* **NLTK**
+* **Scikit-learn**
+* **TF-IDF Vectorization**
+* **Logistic Regression**
+* **Naive Bayes**
+* **Random Forest**
+* **K-Means Clustering**
+* **PCA (Dimensionality Reduction)**
+* **Joblib (Model Saving)**
 
-Implement a live sentiment prediction system
+---
 
-🛠️ Technologies Used
+## 🔄 Project Workflow
 
-Python
+### 1️⃣ Data Cleaning & Wrangling
 
-Pandas & NumPy
+* Removed duplicates
+* Handled missing values
+* Extracted numeric ratings
+* Created sentiment labels
+* Generated new features (Review Length)
 
-Matplotlib & Seaborn
+### 2️⃣ Text Preprocessing (NLP)
 
-NLTK
+* Lowercasing
+* Removing punctuation, URLs, numbers
+* Stopword removal
+* Tokenization
+* Lemmatization
+* TF-IDF Vectorization
 
-Scikit-learn
+### 3️⃣ Machine Learning Models
 
-TF-IDF Vectorization
+Three models were implemented and compared:
 
-Logistic Regression
+| Model               | Purpose                       |
+| ------------------- | ----------------------------- |
+| Logistic Regression | Primary classification model  |
+| Naive Bayes         | Probabilistic text classifier |
+| Random Forest       | Ensemble model                |
 
-K-Means Clustering
+The models were evaluated using:
 
-PCA (Principal Component Analysis)
+* Accuracy
+* Precision
+* Recall
+* F1 Score
+* Cross-validation
 
-📊 Project Workflow
-1️⃣ Data Preprocessing
+After tuning, **Logistic Regression performed best** and was selected as the final model.
 
-Handled missing values
+---
 
-Cleaned inconsistent rating formats
+## 📊 Clustering (Unsupervised Learning)
 
-Converted ratings into sentiment labels
+* Applied **K-Means Clustering**
+* Used **PCA** for visualization
+* Identified natural grouping of customer feedback
+* Enabled review segmentation for deeper business insights
 
-Removed punctuation, numbers, and stopwords
+---
 
-Applied lemmatization
+## 📈 Business Impact
 
-2️⃣ Feature Engineering
+This system enables businesses to:
 
-Converted text into numerical format using TF-IDF Vectorization
+* Automatically monitor customer sentiment
+* Detect dissatisfied customers early
+* Identify recurring complaints
+* Improve service quality
+* Enhance customer retention
+* Make data-driven decisions
 
-3️⃣ Sentiment Classification
+Recall and F1-score were prioritized to ensure negative reviews are not missed.
 
-Used Logistic Regression
+---
 
-Split dataset into training and testing sets
+## 🚀 Deployment Ready
 
-Achieved ~87% accuracy
+* Final model saved using **Joblib**
+* Includes a prediction function:
 
-Evaluated using:
+```python
+predict_sentiment("The food was amazing!")
+```
 
-Accuracy
+* Notebook runs fully without errors (one-go execution)
+* Production-ready structure
 
-Precision
+---
 
-Recall
+## 📂 How to Run
 
-F1-Score
-
-Confusion Matrix
-
-4️⃣ Clustering (Unsupervised Learning)
-
-Applied K-Means Clustering
-
-Used Elbow Method to find optimal number of clusters
-
-Calculated Silhouette Score for cluster validation
-
-Used PCA for 2D cluster visualization
-
-5️⃣ Live Prediction
-
-Implemented a function that predicts sentiment for new user-input reviews.
-
-📈 Results
-
-Logistic Regression achieved strong classification performance (~87% accuracy).
-
-Clustering revealed natural groupings of similar reviews.
-
-PCA visualization provided clear cluster separation.
-
-The system is deployment-ready for real-time sentiment analysis.
-
-💡 Real-World Applications
-
-Restaurant reputation monitoring
-
-Customer satisfaction analysis
-
-Business intelligence dashboards
-
-Market research
-
-Automated feedback systems
-
-🚀 Future Improvements
-
-Implement Deep Learning models (LSTM / BERT)
-
-Hyperparameter tuning
-
-Deploy using Streamlit or Flask
-
-Integrate real-time review scraping
-
-📂 How to Run
+```bash
 1. Clone the repository
-2. Install required dependencies
-3. Run the Python script
+2. Install dependencies:
+   pip install -r requirements.txt
+3. Run the Jupyter Notebook
 4. Use the prediction function to test new reviews
+```
 
-👨‍💻 Author
+---
 
-ponna chaitanya
+## 📦 Required Dependencies
+
+```txt
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+nltk
+wordcloud
+joblib
+```
+
+---
+
+## 🧠 Key Highlights
+
+✔ End-to-End ML Pipeline
+✔ NLP Preprocessing
+✔ Model Comparison
+✔ Hyperparameter Tuning
+✔ Cross-Validation
+✔ Clustering Integrated
+✔ Business-Focused Evaluation
+✔ Deployment Ready
+
+---
+
+## 👨‍💻 Author
+
+Ponna Chaitanya
 Machine Learning & NLP Project
+
+---
+
+# ⭐ Project Level
+
+Final Year / Major Project
+Domain: Machine Learning & Natural Language Processing
